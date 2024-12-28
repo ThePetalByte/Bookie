@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookie 🐻✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            background-color: #FAEBD7;
+            background-image: url("bg.png");
+            background-size: contain;
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+
+        /* Preview Release Info Styling */
+        .preview-release-info {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            background: linear-gradient(45deg, #6B3E26, #3E1C10); /* Brown gradient */
+            border: 3px solid #8B4513; /* Subtle brown border */
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            font-weight: 700;
+            position: fixed; /* Fixed position to stick to the top */
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            transform: translateY(-20px); /* Initial positioning */
+            animation: slideDown 1s ease-out forwards; /* Smooth slide-down animation */
+        }
+
+
+        .preview-release-info i {
+            margin-right: 15px;
+            font-size: 1.4em;
+            transition: transform 0.3s ease; /* Hover effect for the icon */
+        }
+
+        .preview-release-info:hover i {
+            transform: rotate(360deg); /* Rotate icon on hover */
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            animation: slideIn 1.5s ease-out;
+            margin-top: 40px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0 0 20px;
+            color: #A0522D;
+            font-weight: 700;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 0 0 30px;
+            color: #555;
+            font-weight: 400;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-decoration: none;
+            color: #FAEBD7;
+            background-color: #A0522D;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            animation: bounceIn 2s ease-in-out;
+        }
+
+        .download-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            background-color: #8B4513;
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateX(-100%); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+         /* Modal Styles */
+         .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+            justify-content: center;
+            align-items: center;
+            animation: fadeInModal 1s ease-out;
+            z-index: 20;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .modal-content img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .modal-content button {
+            padding: 12px 30px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            background-color: #A0522D;
+            color: #FAEBD7;
+            border-radius: 30px;
+            border: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .modal-content button:hover {
+            transform: translateY(-5px);
+            background-color: #8B4513;
+        }
+
+        /* Fade-in animation for modal */
+        @keyframes fadeInModal {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1096px) {
+            .preview-release-info {
+                font-size: 1.1em;
+                padding: 10px 20px;
+                top: 15px;
+                left: 15px;
+            }
+
+            .container {
+                padding: 15px;
+                margin-top: 20px;
+                align-items: center; /* Center horizontally on smaller screens */
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .download-button {
+                padding: 12px 30px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 1096px) {
+            body {
+                background-image: none; /* Remove background image on phones */
+            }
+
+            .preview-release-info {
+                font-size: 1em;
+                padding: 8px 15px;
+                top: 10px;
+                left: 10px;
+            }
+
+            .container {
+                padding: 10px;
+                margin-top: 15px;
+                align-items: center; /* Ensure content is centered */
+            }
+
+            
+        }
+
+        /* For larger screens, center content horizontally */
+        @media (min-width: 1096px) {
+            .container {
+                align-items: flex-start; /* Align at the start on larger screens */
+                justify-content: center; /* Align at the start on larger screens */
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- Preview Release Info with Icon -->
+    <div class="preview-release-info">
+        <i class="fas fa-info-circle"></i> Preview Release - Some features may be incomplete.
+    </div>
+
+    <div class="container">
+        <h1>Bookie 🐻✨</h1>
+        <p>Seamless and modern e-book reading, designed just for Android users.</p>
+        <a href="#" class="download-button" id="openModalBtn">Download Now</a>
+    </div>
+
+    <!-- Modal -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <img src="app-icon.png" alt="App Icon"> <!-- Replace with actual app icon -->
+            <h2>Download Bookie</h2>
+            <button id="downloadBtn">Download for Android</button>
+        </div>
+    </div>
+
+    <script>
+        // Get elements
+        const openModalBtn = document.getElementById('openModalBtn');
+        const modal = document.getElementById('downloadModal');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        // Open Modal when button is clicked
+        openModalBtn.addEventListener('click', () => {
+            modal.style.display = 'flex'; // Show the modal
+        });
+
+        // Close the modal when clicking outside the modal content (optional)
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none'; // Hide the modal
+            }
+        });
+
+        // Optional: Add functionality to the Download button
+        downloadBtn.addEventListener('click', () => {
+            window.location.href = 'path/to/your/app.apk'; // Direct link to APK file
+        });
+    </script>
+</body>
+</html>
