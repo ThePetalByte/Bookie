@@ -64,6 +64,12 @@
             margin-top: 40px;
         }
 
+        h2 {
+            font-weight: 700;
+            color: #A0522D;
+            font-size: 2.5em;
+        }
+
         h1 {
             font-size: 3em;
             margin: 0 0 20px;
@@ -142,19 +148,32 @@
         }
 
         .modal-content {
-            background-color: #fff;
+            background-color: #FAEBD7;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
             max-width: 400px;
             width: 100%;
+            
+        }
+
+        .column {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            
+            display: flex;
         }
 
         .modal-content img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-        }
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    border-radius: 20%;
+    border-width: 5px;
+    border: solid #A0522D; /* Border color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for the image */
+}
 
         .modal-content button {
             padding: 12px 30px;
@@ -166,6 +185,7 @@
             border-radius: 30px;
             border: none;
             transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;;
         }
 
         .modal-content button:hover {
@@ -254,8 +274,10 @@
     <!-- Modal -->
     <div id="downloadModal" class="modal">
         <div class="modal-content">
-            <img src="app-icon.png" alt="App Icon"> <!-- Replace with actual app icon -->
-            <h2>Download Bookie</h2>
+            <div class="column">
+            <h2>Bookie 🐻✨</h2>
+            <img src="icon.png" alt="App Icon"> <!-- Replace with actual app icon -->
+            </div>
             <button id="downloadBtn">Download for Android</button>
         </div>
     </div>
