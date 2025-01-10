@@ -10,7 +10,7 @@ body {
 .container {
     max-width: 100%;
     margin: 20px auto;
-    padding: 20px;
+    padding: 10px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,6 @@ body {
 .header {
     margin-bottom: 20px;
     animation: slideInDown 0.8s ease-in-out;
-    padding: 1px;
     background-color: #A0522D;
     align-items: center;
     border-radius: 20px;
@@ -49,7 +48,7 @@ body {
 }
 
 .title {
-    font-size: 3em;
+    font-size: 2.5em;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #FFF;
@@ -70,6 +69,7 @@ body {
     border: solid #A0522D; 
     border-radius: 20px;
     margin-bottom: 30px;
+    
 }
 
 .carousel {
@@ -99,7 +99,7 @@ body {
 
 .screenshot img {
     width: 100%;
-    height: auto;
+    height: 550px;
     display: block;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
