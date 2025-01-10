@@ -184,6 +184,7 @@ body {
     border: solid #A0522D;
     background-color: #f1e4d1;
     overflow: hidden;
+    gap:20px;
 }
 
 .modal-image {
