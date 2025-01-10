@@ -110,7 +110,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(223, 97, 0, 0.584);
+    background-color: rgba(160, 81, 45, 0.603);
     color: white;
     border: none;
     cursor: pointer;
@@ -129,7 +129,7 @@ body {
 
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(160, 81, 45, 1);
 }
 
 .download-button {
