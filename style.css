@@ -187,6 +187,15 @@ body {
     gap:20px;
 }
 
+.terms-row {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    margin-bottom: 20px;
+    justify-content: space-around;
+    overflow: hidden;
+    gap: 60px;
+}
+
 .modal-image {
     width: 100px; /* Adjust size of the image */
     height: 100px; /* Adjust size of the image */
