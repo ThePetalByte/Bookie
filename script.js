@@ -63,3 +63,9 @@ function startDownload() {
     // Close the modal after initiating download
     closeModal();
 }
+function openPolicy() {
+    window.open("https://www.termsfeed.com/live/206ee623-eeeb-4c5e-bfb4-2cdbc750cb2d")
+}
+function openTerms() {
+    window.location.href = 'terms.html'
+}
