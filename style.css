@@ -93,7 +93,7 @@ body {
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
-    max-width: 33%;
+    max-width: 45%;
 
 }
 
