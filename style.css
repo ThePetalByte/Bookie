@@ -1,0 +1,216 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAEBD7;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    margin-bottom: 20px;
+    animation: slideInDown 0.8s ease-in-out;
+    padding: 1px;
+    background-color: #A0522D;
+    align-items: center;
+    border-radius: 20px;
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.title {
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #A0522D;
+}
+
+.screenshots {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-width: 20px;
+    border: solid #A0522D; 
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 1s ease-in-out;
+
+}
+
+.screenshot {
+    flex: 0 0 auto;
+    margin: 0 10px; /* Adjust margin */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    max-width: 33%;
+
+}
+
+.screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(223, 97, 0, 0.584);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.download-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #A0522D;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.download-button:hover {
+    background-color: #333;
+}
+
+/* Add styles for the modal */
+/* Ensure the modal takes up the whole screen */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: #FAEBD7;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Flexbox for the row container to align image and title */
+.row {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    margin-bottom: 20px;
+    justify-content: center;
+    border-radius: 20px; /* Round the image */
+    border: solid #A0522D;
+    background-color: #f1e4d1;
+    overflow: hidden;
+    gap: 60px;
+}
+
+.modal-image {
+    width: 100px; /* Adjust size of the image */
+    height: 100px; /* Adjust size of the image */
+    margin-right: 10px; /* Space between the image and title */
+
+}
+
+.modal-title {
+    font-size: 2em;
+    color: #A0522D;
+}
+
+/* Button styles */
+.modal-download-button {
+    padding: 12px 24px;
+    background-color: #A0522D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-download-button:hover {
+    background-color: #333;
+}
