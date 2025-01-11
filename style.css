@@ -196,7 +196,9 @@ body {
     gap: 60px;
     margin-top:20px;
 }
-
+.terms {
+    color: "grey";
+}
 .modal-image {
     width: 100px; /* Adjust size of the image */
     height: 100px; /* Adjust size of the image */
