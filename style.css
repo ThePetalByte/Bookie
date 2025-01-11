@@ -194,6 +194,7 @@ body {
     justify-content: space-around;
     overflow: hidden;
     gap: 60px;
+    margin-top:20px;
 }
 
 .modal-image {
