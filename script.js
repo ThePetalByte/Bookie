@@ -56,7 +56,7 @@ function closeModal() {
 function startDownload() {
     // Assuming you have a file like `bookie.apk` for Android
     const downloadLink = document.createElement('a');
-    downloadLink.href = 'https://github.com/kripo16/Bookie/releases/download/Bookie-1.0.0/Bookie-1.0.1.apk'; // Replace with the actual APK file path
+    downloadLink.href = 'https://github.com/kripo16/Bookie/releases/download/Bookie-1.2.0/Bookie-1.2.0.apk'; // Replace with the actual APK file path
     downloadLink.download = 'Bookie.apk'; // This will prompt the download
     downloadLink.click();
     
